@@ -1,0 +1,147 @@
+/* 基础变量：集中管理页面颜色与间距，便于后续调整 */
+:root {
+  --page-bg: #f4f1eb;
+  --card-bg: #fffdf9;
+  --ink: #252525;
+  --muted: #8b877f;
+  --line: #e8e2d9;
+  --accent: #c87455;
+  --shadow: 0 18px 45px rgba(67, 51, 37, 0.12);
+}
+
+/* 统一盒模型并移除浏览器默认间距 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 页面背景与内容居中布局 */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+/* 名片主体：12px 圆角、柔和阴影与悬停上浮动画 */
+.business-card {
+  width: min(100%, 390px);
+  padding: 48px 40px 28px;
+  border: 1px solid rgba(232, 226, 217, 0.8);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.business-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 54px rgba(67, 51, 37, 0.17);
+}
+
+/* 圆形头像：使用首字母作为轻量的本地头像内容 */
+.avatar {
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  border: 8px solid #f4e6dd;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fffaf5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+}
+
+.profile {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin-bottom: 9px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.job-title {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+/* 联系方式采用纵向列表，方便扫描与点击 */
+.contact-list {
+  display: grid;
+  gap: 14px;
+  padding: 26px 0;
+  font-style: normal;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--ink);
+  font-size: 13px;
+  text-align: left;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.contact-item:hover {
+  color: var(--accent);
+}
+
+.contact-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-grid;
+  flex: 0 0 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f7eee8;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* 小屏幕上收紧内边距，保持卡片在窄屏中舒适可读 */
+@media (max-width: 420px) {
+  .business-card {
+    padding: 38px 26px 24px;
+  }
+}
+
+/* 设备偏好减少动态效果时，关闭悬停过渡 */
+@media (prefers-reduced-motion: reduce) {
+  .business-card,
+  .contact-item {
+    transition: none;
+  }
+}

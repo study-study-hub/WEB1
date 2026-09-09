@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人名片 | 林知夏</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 页面主内容：一张居中的个人名片 -->
+  <main class="business-card">
+    <!-- 头像区域使用首字母，避免依赖外部图片资源 -->
+    <div class="avatar" aria-label="林知夏的头像">林</div>
+
+    <!-- 个人基本信息 -->
+    <section class="profile" aria-labelledby="profile-name">
+      <p class="eyebrow">HELLO, I'M</p>
+      <h1 id="profile-name">林知夏</h1>
+      <p class="job-title">品牌视觉设计师</p>
+    </section>
+
+    <!-- 联系方式列表 -->
+    <address class="contact-list">
+      <a href="mailto:hello@linzhixia.com" class="contact-item">
+        <span class="contact-icon" aria-hidden="true">✉</span>
+        <span>hello@linzhixia.com</span>
+      </a>
+      <a href="tel:+8613800138000" class="contact-item">
+        <span class="contact-icon" aria-hidden="true">⌕</span>
+        <span>+86 138 0013 8000</span>
+      </a>
+      <a href="https://www.linzhixia.com" class="contact-item" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon" aria-hidden="true">↗</span>
+        <span>www.linzhixia.com</span>
+      </a>
+    </address>
+
+    <!-- 卡片底部的个人标签 -->
+    <footer class="card-footer">
+      <span>Branding</span>
+      <span>·</span>
+      <span>Visual</span>
+      <span>·</span>
+      <span>Creative</span>
+    </footer>
+  </main>
+</body>
+</html>
