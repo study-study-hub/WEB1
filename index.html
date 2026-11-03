@@ -1,48 +1,181 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>个人名片 | 林知夏</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <!-- 视口设置：保证页面在移动端正常显示 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 页面描述（利于 SEO 收录） -->
+  <meta name="description" content="蜀韵成都——成都文化旅游宣传网站，品天府美食、游蓉城景点、览蜀地文化。" />
+  <title>蜀韵成都 - 成都文化旅游宣传</title>
+  <!-- 结构与样式分离：外链引入外部样式表 -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- 页面主内容：一张居中的个人名片 -->
-  <main class="business-card">
-    <!-- 头像区域使用首字母，避免依赖外部图片资源 -->
-    <div class="avatar" aria-label="林知夏的头像">林</div>
 
-    <!-- 个人基本信息 -->
-    <section class="profile" aria-labelledby="profile-name">
-      <p class="eyebrow">HELLO, I'M</p>
-      <h1 id="profile-name">林知夏</h1>
-      <p class="job-title">品牌视觉设计师</p>
-    </section>
+  <!-- ============================================================>
+       一、页头区域：左侧为 Logo + 标题，右侧为导航栏
+       ============================================================ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <!-- 左侧：Logo 图标 + 网站标题 -->
+      <a class="logo" href="index.html" title="蜀韵成都 - 返回首页">
+        <!-- Logo：金色印章式 SVG 图标（内嵌“蜀”字） -->
+        <svg class="logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <text x="24" y="31" text-anchor="middle" font-size="24" fill="currentColor">蜀</text>
+        </svg>
+        <span class="logo-text">蜀韵成都</span>
+      </a>
 
-    <!-- 联系方式列表 -->
-    <address class="contact-list">
-      <a href="mailto:hello@linzhixia.com" class="contact-item">
-        <span class="contact-icon" aria-hidden="true">✉</span>
-        <span>hello@linzhixia.com</span>
-      </a>
-      <a href="tel:+8613800138000" class="contact-item">
-        <span class="contact-icon" aria-hidden="true">⌕</span>
-        <span>+86 138 0013 8000</span>
-      </a>
-      <a href="https://www.linzhixia.com" class="contact-item" target="_blank" rel="noopener noreferrer">
-        <span class="contact-icon" aria-hidden="true">↗</span>
-        <span>www.linzhixia.com</span>
-      </a>
-    </address>
+      <!-- 右侧：主导航栏（“首页”高亮显示，其余为待建子页面占位链接） -->
+      <nav class="nav" id="nav" aria-label="主导航">
+        <ul class="nav-list">
+          <li><a class="nav-link active" href="index.html" aria-current="page">首页</a></li>
+          <li><a class="nav-link" href="#">美食</a></li>
+          <li><a class="nav-link" href="#">景点</a></li>
+          <li><a class="nav-link" href="#">文化</a></li>
+          <li><a class="nav-link" href="#">攻略</a></li>
+        </ul>
+      </nav>
 
-    <!-- 卡片底部的个人标签 -->
-    <footer class="card-footer">
-      <span>Branding</span>
-      <span>·</span>
-      <span>Visual</span>
-      <span>·</span>
-      <span>Creative</span>
-    </footer>
-  </main>
+      <!-- 移动端“汉堡”菜单按钮（桌面端隐藏） -->
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="展开或收起菜单" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================>
+       二、全屏 Banner 轮播区域（包含 3 张轮播图）
+       ============================================================ -->
+  <section class="banner" id="banner" aria-label="成都风景轮播图">
+    <!-- 轮播图列表：默认第一张为当前显示（.active） -->
+    <div class="banner-slides">
+      <!-- 第 1 张：宽窄巷子 -->
+      <div class="slide active">
+        <!-- 图片地址为示意占位图，可替换为本地 images/ 目录下的真实图片 -->
+        <img src="https://picsum.photos/seed/chengdu-kuanzhai/1920/1080" alt="成都宽窄巷子街景" />
+        <div class="slide-overlay">
+          <p class="slide-tag">SHU YUN · CHENGDU</p>
+          <h2 class="slide-title">宽窄巷子 · 老成都的市井烟火</h2>
+          <p class="slide-desc">青砖黛瓦之间，慢品一杯盖碗茶，感受最地道的成都慢生活。</p>
+          <a class="slide-btn" href="#intro">了解更多</a>
+        </div>
+      </div>
+      <!-- 第 2 张：都江堰水利工程 -->
+      <div class="slide">
+        <img src="https://picsum.photos/seed/chengdu-dujiangyan/1920/1080" alt="都江堰水利工程" />
+        <div class="slide-overlay">
+          <p class="slide-tag">SHU YUN · CHENGDU</p>
+          <h2 class="slide-title">都江堰 · 两千年不朽的水利传奇</h2>
+          <p class="slide-desc">拜水都江堰，问道青城山，感受古人的治水智慧。</p>
+          <a class="slide-btn" href="#intro">了解更多</a>
+        </div>
+      </div>
+      <!-- 第 3 张：大熊猫繁育研究基地 -->
+      <div class="slide">
+        <img src="https://picsum.photos/seed/chengdu-panda/1920/1080" alt="成都大熊猫繁育研究基地" />
+        <div class="slide-overlay">
+          <p class="slide-tag">SHU YUN · CHENGDU</p>
+          <h2 class="slide-title">大熊猫 · 天府之国最萌名片</h2>
+          <p class="slide-desc">近距离邂逅“国宝”，邂逅成都独有的温柔与治愈。</p>
+          <a class="slide-btn" href="#intro">了解更多</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 左右切换按钮 -->
+    <button class="banner-arrow banner-prev" id="prevBtn" type="button" aria-label="上一张">&#10094;</button>
+    <button class="banner-arrow banner-next" id="nextBtn" type="button" aria-label="下一张">&#10095;</button>
+
+    <!-- 轮播指示圆点（与轮播图一一对应） -->
+    <div class="banner-dots" id="bannerDots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       三、视频宣传区域（位于轮播图下方）
+       ============================================================ -->
+  <section class="video-section section">
+    <div class="container">
+      <!-- 区域标题 -->
+      <div class="section-head">
+        <p class="section-label">VIDEO · 影音</p>
+        <h2 class="section-title">遇见成都</h2>
+        <p class="section-subtitle">一帧一画，领略天府之国的千年风韵</p>
+      </div>
+      <!-- 视频播放器：当前为示例视频源，可替换为本地 chengdu.mp4 等真实宣传片 -->
+      <div class="video-box">
+        <video controls preload="metadata" poster="https://picsum.photos/seed/chengdu-video/1280/720">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          抱歉，您的浏览器不支持 HTML5 视频播放，请升级浏览器后再试。
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       四、城市介绍区域（位于视频下方，约 300 字）
+       ============================================================ -->
+  <section class="intro-section section" id="intro">
+    <div class="container intro-wrap">
+      <div class="section-head">
+        <p class="section-label">ABOUT · 印象</p>
+        <h2 class="section-title">天府之国 · 蓉城成都</h2>
+      </div>
+      <!-- 成都介绍正文 -->
+      <div class="intro-text">
+        <p>成都，简称“蓉”，别称蓉城、锦官城，是四川省省会，自古享有“天府之国”的美誉，拥有两千余年建城史。这座城市坐落于沃野千里的成都平原，气候温润、物产丰饶，岷江之水千年滋养着这片土地。这里既有现代都市的繁华活力，又保留着千年古都的从容韵味。</p>
+        <p>宽窄巷子的青砖黛瓦间，藏着老成都的市井烟火；武侯祠的松柏浓荫下，回荡着三国英雄的传奇故事；杜甫草堂的诗卷上，浸润着诗圣忧国忧民的情怀。大熊猫在竹林间憨态可掬，火锅的麻辣鲜香在街巷中弥漫，川剧变脸令人拍案叫绝，盖碗茶的清香氤氲着悠闲的午后时光。</p>
+        <p>漫步锦里古街，糖画、蜀绣、剪纸等非遗技艺令人流连忘返；环城绿道上，运动与风景相伴而行。“巴适”“安逸”的生活哲学，早已融入成都人的血脉。成都，一座来了就不想离开的城市，正以开放包容的姿态，向世界展示着天府文化的独特魅力。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       五、页尾区域
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- 页尾第一列：网站简介 -->
+      <div class="footer-col">
+        <h3 class="footer-title">蜀韵成都</h3>
+        <p class="footer-desc">以“蜀韵”为名，向世界推介成都之美，传播天府文化，共享蓉城魅力。</p>
+      </div>
+      <!-- 页尾第二列：快捷导航 -->
+      <div class="footer-col">
+        <h3 class="footer-title">快捷导航</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="#">美食</a></li>
+          <li><a href="#">景点</a></li>
+          <li><a href="#">文化</a></li>
+          <li><a href="#">攻略</a></li>
+        </ul>
+      </div>
+      <!-- 页尾第三列：联系方式 -->
+      <div class="footer-col">
+        <h3 class="footer-title">联系我们</h3>
+        <ul class="footer-contact">
+          <li>地址：四川省成都市锦江区天府大道</li>
+          <li>邮箱：hello@shuyun-chengdu.com</li>
+          <li>电话：028-8888-6666</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 版权信息 -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 蜀韵成都 · 版权所有 &nbsp;|&nbsp; 蜀ICP备2026000000号</p>
+    </div>
+  </footer>
+
+  <!-- 行为与结构分离：外链引入 JS 脚本（轮播图 / 滚动效果 / 移动端菜单） -->
+  <script src="js/main.js"></script>
 </body>
 </html>
